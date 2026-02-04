@@ -8,15 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-active');
+
+                // If it's a grid/container, stagger children
+                const staggeredChildren = entry.target.querySelectorAll('.staggered-child');
+                staggeredChildren.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.classList.add('reveal-active');
+                    }, index * 100);
+                });
             }
         });
     }, observerOptions);
 
     // Add reveal class to sections and elements
-    const revealElements = document.querySelectorAll('section, .timeline-item, .project-card, .skill-category, .activity-item');
+    const revealElements = document.querySelectorAll('section, .automation-showcase, .timeline-group');
     revealElements.forEach(el => {
         el.classList.add('reveal-hidden');
         revealObserver.observe(el);
+    });
+
+    // Stagger items in grids
+    const staggerContainers = document.querySelectorAll('.projects-grid, .skills-container, .activity-grid, .hero-actions, .nav-links');
+    staggerContainers.forEach(container => {
+        const children = container.children;
+        Array.from(children).forEach(child => {
+            child.classList.add('reveal-hidden', 'staggered-child');
+        });
+        revealObserver.observe(container);
     });
 
     // Header scroll effect
