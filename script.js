@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Stagger items in grids
-    const staggerContainers = document.querySelectorAll('.projects-grid, .skills-container, .activity-grid, .hero-actions, .nav-links');
+    const staggerContainers = document.querySelectorAll('.projects-grid, .certificates-grid, .skills-container, .activity-grid, .hero-actions, .nav-links');
     staggerContainers.forEach(container => {
         const children = container.children;
         Array.from(children).forEach(child => {
@@ -89,6 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.padding = '1.5rem 0';
             header.style.background = 'rgba(10, 12, 16, 0.8)';
             header.style.boxShadow = 'none';
+        }
+    });
+
+    // Lightbox Functionality
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const certImages = document.querySelectorAll(".certificate-image img");
+
+    certImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.alt;
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.style.display === "block") {
+            closeLightbox();
         }
     });
 
