@@ -62,9 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Add reveal class to sections and elements
-    const revealElements = document.querySelectorAll('section, .automation-showcase, .timeline-group');
-    revealElements.forEach(el => {
-        el.classList.add('reveal-hidden');
+    const revealElements = document.querySelectorAll('section, .automation-showcase, .timeline-group, .about-text');
+    revealElements.forEach((el, index) => {
+        // Add random variations for more dynamic scroll
+        if (index % 3 === 0) {
+            el.classList.add('reveal-slide-left');
+        } else if (index % 3 === 1) {
+            el.classList.add('reveal-slide-right');
+        } else {
+            el.classList.add('reveal-scale');
+        }
         revealObserver.observe(el);
     });
 
@@ -143,5 +150,34 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.remove('active');
             document.body.classList.remove('no-scroll');
         });
+    });
+
+    // Initialize Vanilla-Tilt for 3D interactive animations
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".project-card, .certificate-card, .skill-category, .activity-item, .tilt-effect, .about-image"), {
+            max: 5,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.15,
+        });
+    }
+
+    // Cursor Glow Effect
+    const cursorGlow = document.createElement('div');
+    cursorGlow.classList.add('cursor-glow');
+    document.body.appendChild(cursorGlow);
+
+    document.addEventListener('mousemove', (e) => {
+        requestAnimationFrame(() => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+    });
+
+    // Add hover effect to interactive elements for cursor
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .certificate-card, .timeline-content');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursorGlow.classList.add('active'));
+        el.addEventListener('mouseleave', () => cursorGlow.classList.remove('active'));
     });
 });
