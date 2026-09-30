@@ -4,40 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seif Nady | Full Stack Developer Portfolio</title>
+    <title>Seif Nady | Full Stack Developer & Automation Engineer</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <meta name="description"
-        content="Portfolio of Seif Nady, a Full Stack Developer specializing in React, Node.js, and Python.">
+        content="Portfolio of Seif Nady, a Full Stack Developer and Automation Engineer specializing in React, FastAPI, Python and n8n workflow automation.">
+    <meta name="theme-color" content="#050608">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Seif Nady | Full Stack Developer & Automation Engineer">
+    <meta property="og:description"
+        content="Full Stack Developer & Automation Engineer. React, FastAPI, Python, PostgreSQL, n8n.">
+    <meta property="og:image" content="assets/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- External Assets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Script -->
+    <noscript>
+        <style>
+            .reveal-hidden,
+            .reveal-slide-left,
+            .reveal-slide-right,
+            .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+
     <script defer src="script.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Seif Nady Mahfouz",
+      "jobTitle": "Full Stack Developer & Automation Engineer",
+      "url": "https://seifnady.vercel.app",
+      "email": "mailto:seifnady88@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Helwan University" },
+      "knowsAbout": [
+        "React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy",
+        "n8n", "Workflow Automation", "Docker", "Tailwind CSS"
+      ],
+      "sameAs": [
+        "https://github.com/seif000000",
+        "https://linkedin.com/in/seif-nady-027639243"
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- Header Navigation -->
     <header>
         <div class="container">
-            <nav>
-                <div class="logo">SEIF NADY</div>
-                <div class="menu-toggle" id="mobile-menu">
+            <nav aria-label="Primary">
+                <a class="logo" href="#home">SEIF NADY</a>
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+                    aria-controls="nav-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
                 <ul class="nav-links" id="nav-menu">
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#automation">Automation</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -45,26 +89,49 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
+
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
+                    <p class="hero-eyebrow"><span class="status-dot"></span> Available for work</p>
                     <h2 class="hero-subtitle">Full Stack & Automation</h2>
                     <h1 class="hero-title">
                         <span class="typing-container">
                             I am <span id="typed-text" class="typed-text"></span><span class="cursor">&nbsp;</span>
                         </span>
                     </h1>
-                    <p class="hero-tagline"><strong>Computer Science Student</strong> & <strong>Developer</strong>
-                        building intelligent, automated solutions for the modern web.</p>
+                    <p class="hero-tagline">
+                        <strong>Computer Science student</strong> at Helwan University and a
+                        <strong>Full Stack Developer</strong> who ships production platforms — bilingual web apps,
+                        role-based dashboards, AI features and the automation layer that ties them together.
+                    </p>
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#work" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div class="hero-metric">
+                            <span class="hero-metric-num">4</span>
+                            <span class="hero-metric-label">Production Platforms</span>
+                        </div>
+                        <div class="hero-metric">
+                            <span class="hero-metric-num">10+</span>
+                            <span class="hero-metric-label">Client Projects</span>
+                        </div>
+                        <div class="hero-metric">
+                            <span class="hero-metric-num">124</span>
+                            <span class="hero-metric-label">Backend Tests</span>
+                        </div>
+                        <div class="hero-metric">
+                            <span class="hero-metric-num">6</span>
+                            <span class="hero-metric-label">Internships &amp; Roles</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-decoration"></div>
+            <div class="hero-decoration" aria-hidden="true"></div>
         </section>
 
         <!-- About Section -->
@@ -73,17 +140,23 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="about-wrapper">
                     <div class="about-image glass">
-                        <img src="assets/profile.jpg" alt="Seif Nady">
+                        <img src="assets/profile.jpg" alt="Portrait of Seif Nady">
                     </div>
                     <div class="about-text">
-                        <h3 class="about-greeting">I'm a passionate developer building the future.</h3>
-                        <p>I am Seif Nady, a third-year Computer Science student at <strong>Helwan University</strong>.
-                            My journey is defined by a deep-seated interest in both <strong>Full Stack
-                                Development</strong> and <strong>Workflow Automation</strong>.</p>
-                        <p>Currently, I specialize as an <strong>Automation Developer with n8n</strong>, bridging the
-                            gap between complex business processes and autonomous digital solutions. Through my training
-                            in the <strong>Front-End React track</strong> at DEPI and my internship at <strong>AROMA
-                                Studio</strong>, I focus on creating seamless, high-performance applications.</p>
+                        <h3 class="about-greeting">I build full products, not just screens.</h3>
+                        <p>I'm <strong>Seif Nady</strong>, a Computer Science student at <strong>Helwan
+                                University</strong> working across <strong>Full Stack Development</strong> and
+                            <strong>Workflow Automation</strong>. My work tends to live at the seam between the two:
+                                a real product with real users, and the automations that keep it running without
+                                manual babysitting.</p>
+                        <p>Most of my recent projects are <strong>full-stack platforms</strong> rather than demos — a
+                            bilingual academy system with four role dashboards for <strong>Fluent Soon</strong>, and
+                            a medicine-donation platform with AI vision, maps and a full emergency workflow for my
+                            <strong>DEPI graduation project (Musnad)</strong>. On the front end I work in
+                            <strong>React</strong> and <strong>TypeScript</strong>; on the back end in
+                            <strong>FastAPI</strong>, <strong>SQLAlchemy</strong> and <strong>PostgreSQL</strong>.</p>
+                        <p>I'm also an <strong>Automation Engineer with n8n</strong>, where I design integration
+                            workflows and custom nodes that connect the systems a business already runs on.</p>
                         <div class="about-highlights">
                             <div class="highlight-item">
                                 <span class="highlight-count">3rd Year</span>
@@ -91,7 +164,7 @@
                             </div>
                             <div class="highlight-item">
                                 <span class="highlight-count">10+</span>
-                                <span class="highlight-label">Projects</span>
+                                <span class="highlight-label">Client Projects</span>
                             </div>
                             <div class="highlight-item">
                                 <span class="highlight-count">DEPI</span>
@@ -103,11 +176,10 @@
             </div>
         </section>
 
-
         <!-- Education & Experience Section -->
         <section id="experience" class="experience">
             <div class="container">
-                <h2 class="section-title">Education & Experience</h2>
+                <h2 class="section-title">Education &amp; Experience</h2>
 
                 <div class="timeline">
                     <!-- Education -->
@@ -119,9 +191,9 @@
                             <div class="timeline-date">2023 — Present</div>
                             <div class="timeline-content glass">
                                 <h3>Helwan University</h3>
-                                <h4>Computer Science - Multimedia Software</h4>
-                                <p>Third-year student in the College of Computer Science and Artificial Intelligence.
-                                </p>
+                                <h4>Computer Science — Multimedia Software</h4>
+                                <p>Third-year student in the College of Computer Science and Artificial Intelligence,
+                                    with a focus on web technologies, databases and software engineering.</p>
                                 <span class="badge">GPA: 3.0</span>
                             </div>
                         </div>
@@ -131,9 +203,22 @@
                             <div class="timeline-date">2025 — Present</div>
                             <div class="timeline-content glass">
                                 <h3>Digital Egypt Pioneers Initiative (DEPI)</h3>
-                                <h4>Computer Engineering - Front End React</h4>
-                                <p>Student at Track Front End React, focusing on advanced web technologies and modern
-                                    UI/UX.</p>
+                                <h4>Computer Engineering — Front End React Track</h4>
+                                <p>Scholar in the Front End React track. Built my graduation project — a
+                                    medicine-donation platform — on top of this training.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Aug 2025 — Oct 2025</div>
+                            <div class="timeline-content glass">
+                                <h3>Information Technology Institute (ITI)</h3>
+                                <h4>Full Stack Web Development using Python</h4>
+                                <p>120-hour intensive program covering client-side development, Python OOP,
+                                    PostgreSQL and Flask/Django.</p>
+                                <a href="assets/certificates/iti_fullstack.jpg" target="_blank" rel="noopener"
+                                    class="badge badge-link"><i class="fas fa-certificate"></i> Certificate</a>
                             </div>
                         </div>
                     </div>
@@ -144,11 +229,51 @@
 
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
+                            <div class="timeline-date">Mar 2026 — Present</div>
+                            <div class="timeline-content glass tilt-effect">
+                                <h3>Fluent Soon</h3>
+                                <h4>Full Stack Developer · Client Project</h4>
+                                <p>Built a complete bilingual language-academy platform — public marketing site plus
+                                    four role dashboards (Admin, Supervisor, Instructor, Student). Designed the
+                                    subscription flow from receipt upload to automatic group assignment, secured
+                                    receipts behind 5-minute signed URLs, and shipped it as a single Docker image.</p>
+                                <div class="timeline-tags">
+                                    <span>FastAPI</span><span>React</span><span>TypeScript</span><span>Supabase</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Mar 2026 — Present</div>
+                            <div class="timeline-content glass tilt-effect">
+                                <h3>ITIDA Gigs</h3>
+                                <h4>ITIDA Gigs Trainer · Internship</h4>
+                                <p>Freelance delivery and training through ITIDA's gig program.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Nov 2025 — Present</div>
+                            <div class="timeline-content glass tilt-effect">
+                                <h3>Digital Egypt Pioneers Initiative — DEPI</h3>
+                                <h4>Frontend Developer · Internship</h4>
+                                <p>Front-end design and web interface development across the React track, culminating
+                                    in the Musnad graduation project.</p>
+                                <div class="timeline-tags">
+                                    <span>React</span><span>Tailwind</span><span>Framer Motion</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
                             <div class="timeline-date">Aug 2024 — Present</div>
                             <div class="timeline-content glass tilt-effect">
-                                <h3>AROMA DESIGNS & SOLUTIONS</h3>
-                                <h4>Junior Software developer · Part-time</h4>
-                                <p>Teamwork, JavaScript and +4 skills</p>
+                                <h3>AROMA DESIGNS &amp; SOLUTIONS</h3>
+                                <h4>Junior Software Developer · Part-time</h4>
+                                <p>Teamwork, JavaScript and +4 skills. Ongoing client software delivery.</p>
                             </div>
                         </div>
 
@@ -158,70 +283,304 @@
                             <div class="timeline-content glass tilt-effect">
                                 <h3>Codveda Technologies</h3>
                                 <h4>Frontend Developer · Internship</h4>
-                                <p>Web Application Development, HTML5 and +2 skills</p>
+                                <p>Web application development with HTML5 and +2 skills.</p>
                             </div>
                         </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">Nov 2025 — Present</div>
-                            <div class="timeline-content glass tilt-effect">
-                                <h3>Digital Egypt Pioneers Initiative - DEPI</h3>
-                                <h4>Frontend Developer · Internship</h4>
-                                <p>Front-End Design, Web Interface Design and +7 skills</p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">Aug 2025 — Oct 2025</div>
-                            <div class="timeline-content glass tilt-effect">
-                                <h3>Information Technology Institute (ITI)</h3>
-                                <h4>Full-stack web Development using python · Internship</h4>
-                                <p>Flask, HTML5 and +6 skills</p>
-                                <a href="assets/certificates/iti_fullstack.jpg" target="_blank" class="badge" style="text-decoration: none;"><i class="fas fa-certificate"></i> Certificate</a>
-                            </div>
-                        </div>
-
-
-
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">Mar 2026 — Present</div>
-                            <div class="timeline-content glass tilt-effect">
-                                <h3>ITIDA Gigs</h3>
-                                <h4>ITIDA Gigs trainer · Internship</h4>
-                                <p>Freelancing</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Work Section: Featured case studies + supporting projects -->
+        <section id="work" class="work">
+            <div class="container">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">Two production platforms — built end to end, from data model to deployed
+                    frontend.</p>
+
+                <div class="case-list">
+
+                    <!-- Case Study 1: Fluent Soon -->
+                    <article class="case glass">
+                        <div class="case-body">
+                            <div class="case-head">
+                                <span class="case-index">01</span>
+                                <div>
+                                    <h3 class="case-title">Fluent Soon</h3>
+                                    <p class="case-subtitle">Bilingual Language Academy Platform · Client Work</p>
+                                </div>
+                                <span class="case-badge">Production</span>
+                            </div>
+
+                            <p class="case-summary">
+                                A complete academy operating system: a public marketing and subscription site, plus
+                                four role-based dashboards behind it. A visitor picks a level and schedule, uploads a
+                                payment receipt, and the system carries the request through verification, automatic
+                                group assignment and credential delivery — with a read-only supervisor tier layered
+                                over the top.
+                            </p>
+
+                            <div class="case-metrics">
+                                <div class="case-metric"><span class="case-metric-num">4</span><span
+                                        class="case-metric-label">Role dashboards</span></div>
+                                <div class="case-metric"><span class="case-metric-num">124</span><span
+                                        class="case-metric-label">Backend tests</span></div>
+                                <div class="case-metric"><span class="case-metric-num">5 min</span><span
+                                        class="case-metric-label">Signed receipt URLs</span></div>
+                                <div class="case-metric"><span class="case-metric-num">1</span><span
+                                        class="case-metric-label">Docker image</span></div>
+                            </div>
+
+                            <ul class="case-points">
+                                <li>Server-enforced permissions across four roles — the supervisor is read-only by
+                                    design, not by hiding buttons.</li>
+                                <li>Receipts stored in a private bucket, served through short-lived signed links that
+                                    expire after five minutes.</li>
+                                <li>Automatic random group assignment scoped to level and schedule, with admin
+                                    override — and no half-created accounts when a group is full.</li>
+                                <li>Full Arabic/English parity with real RTL/LTR mirroring, not a bolted-on
+                                    <code>dir="rtl"</code>.</li>
+                                <li>Single Docker image serving both the built frontend and the API, with Alembic
+                                    migrations applied on boot.</li>
+                            </ul>
+
+                            <div class="project-tags">
+                                <span>FastAPI</span>
+                                <span>SQLAlchemy</span>
+                                <span>Alembic</span>
+                                <span>Supabase Postgres</span>
+                                <span>React</span>
+                                <span>Vite</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                                <span>Docker</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://fluent-soon.vercel.app/" target="_blank" rel="noopener"><i
+                                        class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 2: Musnad -->
+                    <article class="case glass">
+                        <div class="case-body">
+                            <div class="case-head">
+                                <span class="case-index">02</span>
+                                <div>
+                                    <h3 class="case-title">مُسند · Musnad</h3>
+                                    <p class="case-subtitle">Medicine Donation Platform · DEPI Graduation Project</p>
+                                </div>
+                                <span class="case-badge">Graduation Project</span>
+                            </div>
+
+                            <p class="case-summary">
+                                <em>Your surplus medicine is someone else's lifeline.</em> A bilingual platform
+                                connecting people with surplus or near-expiry medicine to the patients who need it —
+                                with an emergency board, verified pharmacies and AI that reads a medicine box straight
+                                from a photo, so nobody types Arabic drug names on a phone keyboard.
+                            </p>
+
+                            <div class="case-metrics">
+                                <div class="case-metric"><span class="case-metric-num">33</span><span
+                                        class="case-metric-label">Pages</span></div>
+                                <div class="case-metric"><span class="case-metric-num">13</span><span
+                                        class="case-metric-label">DB tables</span></div>
+                                <div class="case-metric"><span class="case-metric-num">12</span><span
+                                        class="case-metric-label">API routers</span></div>
+                                <div class="case-metric"><span class="case-metric-num">2,350</span><span
+                                        class="case-metric-label">Translation keys</span></div>
+                            </div>
+
+                            <ul class="case-points">
+                                <li>AI medicine scanner reads a box from camera or upload and pre-fills the donation
+                                    form — backed by a four-provider fallback chain (Gemini → OpenAI → xAI → Groq).</li>
+                                <li>Emergency / SOS board with urgency levels, atomic reservation so two people can't
+                                    claim the same box, and automatic voucher issuance at verified pharmacies.</li>
+                                <li>Three roles — user, pharmacy, admin — guarded on both sides: React route guards for
+                                    UX, FastAPI dependencies for actual security.</li>
+                                <li>Map discovery, barcode/QR scanning, direct inbox, live notifications and a
+                                    private medical history per account.</li>
+                                <li>~2,350 translation keys across six locale modules, Arabic-first with logical CSS
+                                    properties so every surface mirrors cleanly.</li>
+                            </ul>
+
+                            <div class="project-tags">
+                                <span>React 19</span>
+                                <span>Vite 7</span>
+                                <span>Tailwind CSS 4</span>
+                                <span>FastAPI</span>
+                                <span>SQLModel</span>
+                                <span>PostgreSQL</span>
+                                <span>Leaflet</span>
+                                <span>Framer Motion</span>
+                                <span>Zustand</span>
+                                <span>Vercel</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://musnad.vercel.app/" target="_blank" rel="noopener"><i
+                                        class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 3: Fluent Soon Recruitment -->
+                    <article class="case glass">
+                        <div class="case-body">
+                            <div class="case-head">
+                                <span class="case-index">03</span>
+                                <div>
+                                    <h3 class="case-title">Fluent Soon Recruitment</h3>
+                                    <p class="case-subtitle">Instructor Recruitment Platform · Client Work</p>
+                                </div>
+                                <span class="case-badge">Production</span>
+                            </div>
+
+                            <p class="case-summary">
+                                A recruitment platform for hiring English and language instructors, built around a
+                                public application form. No account, no friction: an applicant fills in their details
+                                and records themselves with their microphone straight on the site, which creates
+                                their record instantly and drops it into the review pipeline.
+                            </p>
+
+                            <div class="case-metrics">
+                                <div class="case-metric"><span class="case-metric-num">3</span><span
+                                        class="case-metric-label">Access tiers</span></div>
+                                <div class="case-metric"><span class="case-metric-num">0</span><span
+                                        class="case-metric-label">Accounts needed</span></div>
+                                <div class="case-metric"><span class="case-metric-num">2</span><span
+                                        class="case-metric-label">Recording modes</span></div>
+                                <div class="case-metric"><span class="case-metric-num">Live</span><span
+                                        class="case-metric-label">Review pipeline</span></div>
+                            </div>
+
+                            <ul class="case-points">
+                                <li>Public intake — applicants create their own record from the website without ever
+                                    signing up.</li>
+                                <li>Two ways to attach audio: record yourself in-browser with a microphone, or upload
+                                    an existing audio file.</li>
+                                <li>Three access tiers over the same data: admins manage everything, editors update
+                                    applicant records, and a read-only viewer reviews submissions.</li>
+                                <li>Full applicant data on file, with accepted and rejected decisions tracked so the
+                                    review pipeline stays auditable.</li>
+                            </ul>
+
+                            <div class="project-tags">
+                                <span>Full Stack</span>
+                                <span>Role-Based Access</span>
+                                <span>Public Intake</span>
+                                <span>Audio Recording</span>
+                                <span>File Upload</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://fluentsoonrecruitmentagency.vercel.app/" target="_blank"
+                                    rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 4: Moonlit Pages -->
+                    <article class="case glass">
+                        <div class="case-body">
+                            <div class="case-head">
+                                <span class="case-index">04</span>
+                                <div>
+                                    <h3 class="case-title">Moonlit Pages</h3>
+                                    <p class="case-subtitle">Online Bookstore &amp; E-Commerce · Client Work</p>
+                                </div>
+                                <span class="case-badge">Production</span>
+                            </div>
+
+                            <p class="case-summary">
+                                A bookstore where the checkout is part of the platform. Shop a catalog of titles — each
+                                with its author, price, details and summary, alongside active offers — then pay by
+                                bank transfer and upload a screenshot of the receipt. Nothing ships until an admin has
+                                looked at the transfer and approved it.
+                            </p>
+
+                            <div class="case-metrics">
+                                <div class="case-metric"><span class="case-metric-num">Full</span><span
+                                        class="case-metric-label">Catalog</span></div>
+                                <div class="case-metric"><span class="case-metric-num">Offers</span><span
+                                        class="case-metric-label">Promotions</span></div>
+                                <div class="case-metric"><span class="case-metric-num">Verified</span><span
+                                        class="case-metric-label">Payments</span></div>
+                                <div class="case-metric"><span class="case-metric-num">Editable</span><span
+                                        class="case-metric-label">Account details</span></div>
+                            </div>
+
+                            <ul class="case-points">
+                                <li>Rich book catalog — author, price, full details and a summary for every title,
+                                    with offers layered on top.</li>
+                                <li>In-platform payment flow: bank transfer, then receipt screenshot upload as proof
+                                    of payment.</li>
+                                <li>Admin reviews and approves every transfer before an order is fulfilled — no
+                                    unverified orders slip through.</li>
+                                <li>The receiving account number is editable from the admin dashboard, so rotating
+                                    payment details never requires a redeploy.</li>
+                            </ul>
+
+                            <div class="project-tags">
+                                <span>Full Stack</span>
+                                <span>E-Commerce</span>
+                                <span>Payment Verification</span>
+                                <span>Admin Dashboard</span>
+                                <span>File Upload</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://moonlit-pages.vercel.app/" target="_blank" rel="noopener"><i
+                                        class="fas fa-arrow-up-right-from-square"></i> Live Site</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Projects -->
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">More Projects</h2>
 
                 <div class="projects-grid">
-                    <!-- Project: X-O-Game -->
+                    <!-- Project: Restaurant Management -->
                     <div class="project-card glass tilt-effect">
                         <div class="project-info">
-                            <h3 class="project-name">X-O-Game</h3>
-                            <h4 class="project-type">AI-Powered Strategy</h4>
-                            <p class="project-desc">A Python-based Tic Tac Toe game with a Tkinter GUI featuring
-                                Minimax, Alpha-Beta Pruning, and A* algorithms for a challenging AI opponent.</p>
+                            <h3 class="project-name">Restaurant Management</h3>
+                            <h4 class="project-type">Full Stack Web App</h4>
+                            <p class="project-desc">Capstone project for ITI. Features menu management, order
+                                processing, and customer interaction modules.</p>
                             <div class="project-tags">
-                                <span>Python</span>
-                                <span>Tkinter</span>
-                                <span>AI Algorithms</span>
+                                <span>Flask</span>
+                                <span>Bootstrap</span>
+                                <span>PostgreSQL</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/seif000000/X-O-game" target="_blank"><i
-                                        class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/seif000000/Restaurant-management-system" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Attendance Tracking -->
+                    <div class="project-card glass tilt-effect">
+                        <div class="project-info">
+                            <h3 class="project-name">Attendance Tracking</h3>
+                            <h4 class="project-type">QR-Based System</h4>
+                            <p class="project-desc">Secure application using QR code generation and PIN verification for
+                                attendance tracking. Includes admin dashboard.</p>
+                            <div class="project-tags">
+                                <span>Flask</span>
+                                <span>Python</span>
+                                <span>QR Lib</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/seif000000/attendance_app" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -239,8 +598,8 @@
                                 <span>JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/seif000000/project-web-design" target="_blank"><i
-                                        class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/seif000000/project-web-design" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -258,145 +617,14 @@
                                 <span>Scalable</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/seif000000/HyperMarket" target="_blank"><i
-                                        class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project: Restaurant Management -->
-                    <div class="project-card glass tilt-effect">
-                        <div class="project-info">
-                            <h3 class="project-name">Restaurant Management</h3>
-                            <h4 class="project-type">Full Stack Web App</h4>
-                            <p class="project-desc">Capstone project for ITI. Features menu management, order
-                                processing, and customer interaction modules.</p>
-                            <div class="project-tags">
-                                <span>Flask</span>
-                                <span>Bootstrap</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/seif000000/Restaurant-management-system" target="_blank"><i
-                                        class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Attendance Tracking -->
-                    <div class="project-card glass tilt-effect">
-                        <div class="project-info">
-                            <h3 class="project-name">Attendance Tracking</h3>
-                            <h4 class="project-type">QR-Based System</h4>
-                            <p class="project-desc">Secure application using QR code generation and PIN verification for
-                                attendance tracking. Includes admin dashboard.</p>
-                            <div class="project-tags">
-                                <span>Flask</span>
-                                <span>Python</span>
-                                <span>QR Lib</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/seif000000/attendance_app" target="_blank"><i
-                                        class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/seif000000/HyperMarket" target="_blank"
+                                    rel="noopener"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Certificates Section -->
-        <section id="certificates" class="certificates">
-            <div class="container">
-                <h2 class="section-title">Certificates & Achievements</h2>
-                <div class="certificates-grid">
-                    <!-- Certificate 1: IBM Web Development -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/ibm_web_dev.jfif" alt="IBM Web Development Fundamentals" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Web Development Fundamentals</h3>
-                            <h4 class="certificate-issuer">IBM SkillsBuild</h4>
-                            <p class="certificate-date">Jan 2025</p>
-                            <p class="certificate-desc">Successfully completed requirements for Web Development Fundamentals.</p>
-                        </div>
-                    </div>
-                    <!-- Certificate 2: ITI Full Stack -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/iti_fullstack.jpg" alt="Full Stack Python ITI" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Full Stack Python</h3>
-                            <h4 class="certificate-issuer">ITI (Information Technology Institute)</h4>
-                            <p class="certificate-date">Sep 2025</p>
-                            <p class="certificate-desc">120-hour intensive program: Client-Side, Python OOP, PostgreSQL, Flask/Django.</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 3: Coursera Azure -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/azure_nodejs.jpg" alt="Azure REST API & NodeJS" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Azure REST API & NodeJS</h3>
-                            <h4 class="certificate-issuer">Coursera (Mario Ferraro)</h4>
-                            <p class="certificate-date">Jan 2026</p>
-                            <p class="certificate-desc">Creating REST APIs using NodeJS Serverless Functions on Azure.</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 4: Udemy Web Front End -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/udemy_frontend.jpg" alt="Web Front End Udemy" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Web Front End Learning Guide</h3>
-                            <h4 class="certificate-issuer">Udemy (Hassan Fulaih)</h4>
-                            <p class="certificate-date">Jan 2025</p>
-                            <p class="certificate-desc">Comprehensive guide to modern Front End development (10 hours).</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 5: Udemy Python/Flask -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/udemy_python_flask.jpg" alt="Python & Flask Udemy" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Python & Flask Framework</h3>
-                            <h4 class="certificate-issuer">Udemy (Horizon Tech)</h4>
-                            <p class="certificate-date">Jan 2026</p>
-                            <p class="certificate-desc">Complete course on Python, Flask, and HTML essentials (9.5 hours).</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 6: Udemy Web Design -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/udemy_webdesign.jpg" alt="Web Design Udemy" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Web Design Beginner to Advanced</h3>
-                            <h4 class="certificate-issuer">Udemy (Manuel Tudu)</h4>
-                            <p class="certificate-date">Apr 2025</p>
-                            <p class="certificate-desc">Focused on modern web design principles and best practices.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Lightbox Modal -->
-        <div id="lightbox" class="lightbox">
-            <span class="lightbox-close">&times;</span>
-            <img class="lightbox-content" id="lightbox-img">
-            <div id="lightbox-caption"></div>
-        </div>
 
         <!-- Skills Section -->
         <section id="skills" class="skills">
@@ -406,8 +634,9 @@
                     <div class="skill-category glass">
                         <h3><i class="fas fa-code"></i> Programming</h3>
                         <div class="skill-tags">
-                            <span>Python</span><span>C</span><span>C++</span><span>JAVA</span>
-                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span>
+                            <span>Python</span><span>JavaScript</span><span>TypeScript</span>
+                            <span>C</span><span>C++</span><span>JAVA</span>
+                            <span>HTML5</span><span>CSS3</span><span>Git</span>
                         </div>
                     </div>
                     <div class="skill-category glass">
@@ -419,11 +648,20 @@
                         </div>
                     </div>
                     <div class="skill-category glass">
-                        <h3><i class="fas fa-layer-group"></i> Web & Backend</h3>
+                        <h3><i class="fas fa-layer-group"></i> Frontend</h3>
                         <div class="skill-tags">
-                            <span>React</span><span>Node JS</span><span>Express JS</span>
-                            <span>Flask</span><span>Django</span><span>SQL Alchemy</span>
-                            <span>Bootstrap</span>
+                            <span>React</span><span>React 19</span><span>Vite</span>
+                            <span>Tailwind CSS</span><span>Framer Motion</span><span>Zustand</span>
+                            <span>Leaflet</span><span>Responsive UI</span><span>RTL / LTR</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass">
+                        <h3><i class="fas fa-server"></i> Backend &amp; Data</h3>
+                        <div class="skill-tags">
+                            <span>FastAPI</span><span>Node JS</span><span>Express JS</span>
+                            <span>Flask</span><span>Django</span><span>SQLAlchemy</span>
+                            <span>SQLModel</span><span>PostgreSQL</span><span>Alembic</span>
+                            <span>Supabase</span><span>Docker</span>
                         </div>
                     </div>
                     <div class="skill-category glass">
@@ -472,10 +710,132 @@
             </div>
         </section>
 
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates">
+            <div class="container">
+                <h2 class="section-title">Certificates &amp; Achievements</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/ibm_web_dev.jfif" alt="IBM Web Development Fundamentals"
+                                class="cert-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Web Development Fundamentals</h3>
+                            <h4 class="certificate-issuer">IBM SkillsBuild</h4>
+                            <p class="certificate-date">Jan 2025</p>
+                            <p class="certificate-desc">Successfully completed requirements for Web Development
+                                Fundamentals.</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/iti_fullstack.jpg" alt="Full Stack Python ITI" class="cert-img"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Full Stack Python</h3>
+                            <h4 class="certificate-issuer">ITI (Information Technology Institute)</h4>
+                            <p class="certificate-date">Sep 2025</p>
+                            <p class="certificate-desc">120-hour intensive program: Client-Side, Python OOP, PostgreSQL,
+                                Flask/Django.</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/azure_nodejs.jpg" alt="Azure REST API and NodeJS"
+                                class="cert-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Azure REST API &amp; NodeJS</h3>
+                            <h4 class="certificate-issuer">Coursera (Mario Ferraro)</h4>
+                            <p class="certificate-date">Jan 2026</p>
+                            <p class="certificate-desc">Creating REST APIs using NodeJS Serverless Functions on Azure.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/udemy_frontend.jpg" alt="Web Front End Udemy" class="cert-img"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Web Front End Learning Guide</h3>
+                            <h4 class="certificate-issuer">Udemy (Hassan Fulaih)</h4>
+                            <p class="certificate-date">Jan 2025</p>
+                            <p class="certificate-desc">Comprehensive guide to modern Front End development (10
+                                hours).</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/udemy_python_flask.jpg" alt="Python and Flask Udemy"
+                                class="cert-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Python &amp; Flask Framework</h3>
+                            <h4 class="certificate-issuer">Udemy (Horizon Tech)</h4>
+                            <p class="certificate-date">Jan 2026</p>
+                            <p class="certificate-desc">Complete course on Python, Flask, and HTML essentials (9.5
+                                hours).</p>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/udemy_webdesign.jpg" alt="Web Design Udemy" class="cert-img"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Web Design Beginner to Advanced</h3>
+                            <h4 class="certificate-issuer">Udemy (Manuel Tudu)</h4>
+                            <p class="certificate-date">Apr 2025</p>
+                            <p class="certificate-desc">Focused on modern web design principles and best practices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 7: HNU Appreciation -->
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/hnu_appreciation.jpg" alt="Helwan National University Certificate of Appreciation"
+                                class="cert-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">Certificate of Appreciation</h3>
+                            <h4 class="certificate-issuer">Helwan National University</h4>
+                            <p class="certificate-date">2024</p>
+                            <p class="certificate-desc">Recognized for valuable contribution and dedicated efforts in
+                                student activities.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 8: YLY 7G Event -->
+                    <div class="certificate-card glass tilt-effect">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/yly_7g_event.png" alt="YLY 7G Show Time event"
+                                class="cert-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="certificate-info">
+                            <h3 class="certificate-name">7G Show Time Event</h3>
+                            <h4 class="certificate-issuer">YLY &amp; Ministry of Youth</h4>
+                            <p class="certificate-date">2024</p>
+                            <p class="certificate-desc">Contributed to the organizational team of the "7G Show Time"
+                                event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Student Activity & Volunteering Section -->
         <section id="activities" class="activities">
             <div class="container">
-                <h2 class="section-title">Volunteering & Leadership</h2>
+                <h2 class="section-title">Volunteering &amp; Leadership</h2>
                 <div class="activity-grid">
                     <div class="activity-item glass">
                         <div class="activity-icon"><i class="fas fa-users"></i></div>
@@ -501,31 +861,6 @@
                                 community meetups.</p>
                         </div>
                     </div>
-
-                    <!-- Moved Certificates -->
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/hnu_appreciation.jpg" alt="HNU Appreciation" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">Certificate of Appreciation</h3>
-                            <h4 class="certificate-issuer">Helwan National University</h4>
-                            <p class="certificate-date">2024</p>
-                            <p class="certificate-desc">Valuable contribution and dedicated efforts in student activities at HNU.</p>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card glass tilt-effect">
-                        <div class="certificate-image">
-                            <img src="assets/certificates/yly_7g_event.png" alt="YLY 7G Event" class="cert-img">
-                        </div>
-                        <div class="certificate-info">
-                            <h3 class="certificate-name">7G Show Time Event</h3>
-                            <h4 class="certificate-issuer">YLY & Ministry of Youth</h4>
-                            <p class="certificate-date">2024</p>
-                            <p class="certificate-desc">Successful contribution to the "7G Show Time" event organizational team.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -539,15 +874,18 @@
                         <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of
                             your visions.</p>
                         <ul class="contact-list">
-                            <li><i class="fas fa-envelope"></i> seifnady88@gmail.com</li>
+                            <li><i class="fas fa-envelope"></i> <a
+                                    href="mailto:seifnady88@gmail.com">seifnady88@gmail.com</a></li>
                             <li><i class="fas fa-phone"></i> 011 10705509</li>
                             <li><i class="fas fa-location-dot"></i> Cairo, Egypt</li>
                         </ul>
                         <div class="social-links">
-                            <a href="https://github.com/seif000000" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/seif-nady-027639243" target="_blank"><i
-                                    class="fab fa-linkedin"></i></a>
-                            <a href="https://seifnady.vercel.app" target="_blank"><i class="fas fa-globe"></i></a>
+                            <a href="https://github.com/seif000000" target="_blank" rel="noopener"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/seif-nady-027639243" target="_blank" rel="noopener"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://seifnady.vercel.app" target="_blank" rel="noopener"
+                                aria-label="Live portfolio"><i class="fas fa-globe"></i></a>
                         </div>
                     </div>
                     <div class="contact-action">
@@ -557,13 +895,20 @@
             </div>
         </section>
 
+    </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Certificate image">
+        <span class="lightbox-close" role="button" tabindex="0" aria-label="Close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption"></div>
+    </div>
 
-        <footer>
-            <div class="container">
-                <p>&copy; 2026 Seif Nady Mahfouz. Last updated in Mar 2026.</p>
-            </div>
-        </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Seif Nady Mahfouz. Built with vanilla HTML, CSS and JavaScript.</p>
+        </div>
+    </footer>
 
 </body>
 
