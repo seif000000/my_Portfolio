@@ -80,6 +80,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    max-width: 100%;
+    overflow-x: clip;
 }
 
 body {
@@ -88,8 +90,18 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 body::before {
@@ -317,10 +329,14 @@ nav {
 /* Typing Effect */
 .typing-container {
     display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .typed-text {
     color: var(--primary-light);
+    overflow-wrap: break-word;
 }
 
 .cursor {
@@ -494,8 +510,12 @@ section {
 
 .hero-title {
     font-size: clamp(2.6rem, 6.5vw, 4.5rem);
-    line-height: 1.08;
+    line-height: 1.12;
     margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+    min-height: 2.24em;
 }
 
 .hero-tagline {
@@ -503,6 +523,7 @@ section {
     color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 640px;
+    overflow-wrap: break-word;
 }
 
 .hero-tagline strong {
@@ -519,13 +540,14 @@ section {
 
 .hero-metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
     border-radius: 14px;
     overflow: hidden;
     max-width: 660px;
+    width: 100%;
 }
 
 .hero-metric {
@@ -986,7 +1008,7 @@ section {
 
 .case-metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
@@ -1066,7 +1088,7 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
     margin-top: 3.5rem;
 }
@@ -1175,7 +1197,7 @@ section {
 /* Certificates Section */
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
     margin-top: 3.5rem;
 }
@@ -1317,7 +1339,7 @@ section {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 1.5rem;
     margin-top: 3.5rem;
 }
@@ -1521,7 +1543,7 @@ section {
 /* Activity Section */
 .activity-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
@@ -1725,12 +1747,34 @@ section {
         font-size: 1.9rem;
     }
 
+    .hero {
+        padding: 120px 0 64px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 2px;
+        font-size: 0.78rem;
+    }
+
     .hero-title {
-        font-size: 2.6rem;
+        font-size: clamp(1.85rem, 8.5vw, 2.6rem);
+        min-height: 2.3em;
     }
 
     .hero-tagline {
         font-size: 1.02rem;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 auto;
+    }
+
+    .hero-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-metrics {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .about-highlights {
@@ -1743,6 +1787,35 @@ section {
 
     .automation-content h3 {
         font-size: 1.5rem;
+    }
+
+    .cursor-glow,
+    .hero-decoration {
+        display: none;
+    }
+
+    .contact-list a {
+        overflow-wrap: anywhere;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-metric {
+        padding: 1rem 0.5rem;
+    }
+
+    .hero-metric-num {
+        font-size: 1.35rem;
     }
 }
 
